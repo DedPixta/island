@@ -1,0 +1,134 @@
+---
+rows: 10
+columns: 20
+period: 500
+limits:
+  Rabbit:
+    maxWeight: 2.0
+    maxPopulation: 150
+    speed: 2
+  Goat:
+    maxWeight: 60.0
+    maxPopulation: 140
+    speed: 3
+  Sheep:
+    maxWeight: 70.0
+    maxPopulation: 140
+    speed: 3
+  Horse:
+    maxWeight: 400.0
+    maxPopulation: 20
+    speed: 4
+  Boar:
+    maxWeight: 400.0
+    maxPopulation: 5
+    speed: 2
+  Snake:
+    maxWeight: 15.0
+    maxPopulation: 30
+    speed: 1
+  Eagle:
+    maxWeight: 6.0
+    maxPopulation: 20
+    speed: 3
+  Mouse:
+    maxWeight: 0.05
+    maxPopulation: 500
+    speed: 1
+  Caterpillar:
+    maxWeight: 0.01
+    maxPopulation: 1000
+    speed: 0
+  Deer:
+    maxWeight: 300.0
+    maxPopulation: 20
+    speed: 4
+  Fox:
+    maxWeight: 8.0
+    maxPopulation: 30
+    speed: 2
+  Herb:
+    maxWeight: 10.0
+    maxPopulation: 200
+    speed: 0
+  Buffalo:
+    maxWeight: 700.0
+    maxPopulation: 10
+    speed: 3
+  Wolf:
+    maxWeight: 50.0
+    maxPopulation: 30
+    speed: 3
+  Bear:
+    maxWeight: 500.0
+    maxPopulation: 5
+    speed: 2
+  Duck:
+    maxWeight: 1.0
+    maxPopulation: 200
+    speed: 4
+foodMap:
+  Boar:
+    Mouse: 50
+    Caterpillar: 90
+    Herb: 100
+  Snake:
+    Mouse: 40
+    Rabbit: 20
+    Duck: 10
+    Fox: 15
+  Rabbit:
+    Herb: 100
+  Caterpillar:
+    Herb: 100
+  Bear:
+    Boar: 50
+    Mouse: 90
+    Snake: 80
+    Horse: 40
+    Rabbit: 80
+    Sheep: 70
+    Duck: 10
+    Goat: 70
+    Deer: 80
+    Buffalo: 20
+  Fox:
+    Mouse: 90
+    Rabbit: 70
+    Duck: 60
+    Caterpillar: 40
+  Deer:
+    Herb: 100
+  Herb: {}
+  Mouse:
+    Caterpillar: 90
+    Herb: 100
+  Horse:
+    Herb: 100
+  Sheep:
+    Herb: 100
+  Duck:
+    Caterpillar: 90
+    Herb: 100
+  Goat:
+    Herb: 100
+  Wolf:
+    Boar: 15
+    Mouse: 80
+    Horse: 10
+    Rabbit: 60
+    Sheep: 70
+    Duck: 40
+    Goat: 60
+    Deer: 15
+    Buffalo: 10
+  Eagle:
+    Mouse: 90
+    Rabbit: 90
+    Duck: 80
+    Fox: 10
+  Buffalo:
+    Herb: 100
+startWeightFactor: 0.75
+weightDecreaseFactor: 0.02
+deathThreshold: 0.1
