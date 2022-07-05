@@ -77,7 +77,7 @@ public abstract class Animal extends Creature implements Movable, Eat {
 
     private Creature getTarget(Ration ration, Residents residents) {
 
-        Set<Creature> targetCreatures = residents
+        Set<Creature> targets = residents
                 .entrySet()
                 .stream()
                 .filter(resident -> resident.getValue().size() > 0)
@@ -86,9 +86,9 @@ public abstract class Animal extends Creature implements Movable, Eat {
                 .orElseThrow(() -> new CreatureNotFound("target not found"))//TODO прочитать тему Stream, проверить правильность написания, понять как вставить причину
                 .getValue();
 
-        return targetCreatures
+        return targets
                 .stream()
-                .skip(Randomizer.random(0,targetCreatures.size()))
+                .skip(Randomizer.random(0,targets.size()))
                 .iterator()
                 .next();
     }

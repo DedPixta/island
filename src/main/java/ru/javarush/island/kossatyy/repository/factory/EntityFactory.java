@@ -13,7 +13,7 @@ public class EntityFactory implements Factory {
 
     private static EntityFactory FACTORY;
 
-    private final Map<String, Factory> factoryMap;
+    private final Map<String, CreatureFactory> factoryMap;
     private final Map<String, Creature> prototypes;
 
     public EntityFactory() {
@@ -34,15 +34,15 @@ public class EntityFactory implements Factory {
 
     @Override
     public Creature create(String type) {
-        Factory factory = factoryMap.get(type);
+        CreatureFactory factory = factoryMap.get(type);
         Creature creature = factory.create(type);
         if (creature != null) {
             return creature;
         } else throw new IllegalArgumentException("Wrong type for creation - " + type);
     }
 
-    private Map<String, Factory> createFactoryMap() {
-        Map<String, Factory> factories = new LinkedHashMap<>(){{
+    private Map<String, CreatureFactory> createFactoryMap() {
+        Map<String, CreatureFactory> factories = new LinkedHashMap<>(){{
             put(Group.WOLF.getType(), new WolfFactory());
             put(Group.SNAKE.getType(), new SnakeFactory());
             put(Group.FOX.getType(), new FoxFactory());
@@ -66,7 +66,7 @@ public class EntityFactory implements Factory {
     private  Map<String, Creature> createPrototypes() {
         Map<String, Creature> result = new LinkedHashMap<>();
 
-        for (Map.Entry<String, Factory> pair : factoryMap.entrySet()){
+        for (Map.Entry<String, CreatureFactory> pair : factoryMap.entrySet()){
             String type = pair.getKey();
             Creature creature = pair.getValue().create(type);
             result.put(type, creature);

@@ -9,7 +9,7 @@ import ru.javarush.island.kossatyy.util.Satiety;
 import java.util.Map;
 
 
-public abstract class CreatureFactory implements Factory {
+public abstract class CreatureFactory{
     protected int groupId;
     protected String type;
     protected Config config = Config.getConfig();
@@ -20,8 +20,5 @@ public abstract class CreatureFactory implements Factory {
     protected Limit limit;
     protected String icon;
 
-    @Override
-    public Map<String, Creature> getPrototypes() {
-        return null;
-    }
+    public abstract Creature create(String type);
 }

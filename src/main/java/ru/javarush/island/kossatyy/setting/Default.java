@@ -8,12 +8,14 @@ import static java.util.Map.entry;
 
 public final class Default {
 
-    public static final int ROWS = 10;
+    public static final int ROWS = 100;
     public static final int COLUMNS = 20;
     public static final int PERIOD = 500; // period for one cycle of day
     public static final double START_WEIGHT_FACTOR = 0.75; // amount of maxWeight on born creature
     public static final double WEIGHT_DECREASE_FACTOR = 0.02; // amount of maxWeight decreasing every day
     public static final double DEATH_THRESHOLD = 0.1; // ratio of creatures current weight with his maximum weight before delete
+
+    private Default(){};
 
     /*
     int[K1][K2] = V ,where:

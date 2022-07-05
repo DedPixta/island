@@ -28,9 +28,9 @@ public class ConsoleView implements View {
 
     @Override
     public String showStatistics() {
-        Map<String, Integer> statisticCarni = new HashMap<>();
-        Map<String, Integer> statisticHerbi = new HashMap<>();
-        Map<String, Integer> statisticPlant = new HashMap<>();
+        Map<String, Integer> statCarni = new HashMap<>();
+        Map<String, Integer> statHerbi = new HashMap<>();
+        Map<String, Integer> statPlant = new HashMap<>();
         Cell[][] cells = island.getCells();
         for (Cell[] row : cells) {
             for (Cell cell : row) {
@@ -45,18 +45,18 @@ public class ConsoleView implements View {
                                         String info = icon + name;
 
                                         if (creature instanceof Herbivorous) {
-                                            statisticHerbi.put(info, statisticHerbi.getOrDefault(info, 0) + set.size());
+                                            statHerbi.put(info, statHerbi.getOrDefault(info, 0) + set.size());
                                         } else if (creature instanceof Carnivore) {
-                                            statisticCarni.put(info, statisticCarni.getOrDefault(info, 0) + set.size());
+                                            statCarni.put(info, statCarni.getOrDefault(info, 0) + set.size());
                                         } else {
-                                            statisticPlant.put(info, statisticPlant.getOrDefault(info, 0) + set.size());
+                                            statPlant.put(info, statPlant.getOrDefault(info, 0) + set.size());
                                         }
                                     }
                             );
                 }
             }
         }
-        return printStatistics(statisticCarni, statisticHerbi, statisticPlant);
+        return printStatistics(statCarni, statHerbi, statPlant);
     }
 
     @Override
